@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student Data</title>
+</head>
+<body>
+    <div id="student-details">
+        <h1>Student Details</h1>
+        <div id="firstName"></div>
+        <div id="lastName"></div>
+        <div id="rollNo"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const selectedStudent = JSON.parse(localStorage.getItem('selectedStudent')) || {};
+
+            // Display the selected student's data
+            document.getElementById('firstName').innerText = `First Name: ${selectedStudent.firstName || ''}`;
+            document.getElementById('lastName').innerText = `Last Name: ${selectedStudent.lastName || ''}`;
+            document.getElementById('rollNo').innerText = `Roll No.: ${selectedStudent.rollNo || ''}`;
+        });
+    </script>
+</body>
+</html>
